@@ -1,5 +1,8 @@
 import React, {useEffect} from 'react'
+import styled from 'styled-components'
+
 import setUpTicker from './utils/ticker'
+import Card from './components/Card'
 
 function App() {
 
@@ -11,10 +14,18 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-      <p>Testing..</p>
-    </div>
+    <ContainerDiv>
+      <Card></Card>
+    </ContainerDiv>
   );
 }
+
+const ContainerDiv = styled.div`
+  background: #009688;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 export default App;

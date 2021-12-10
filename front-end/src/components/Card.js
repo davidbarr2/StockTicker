@@ -16,11 +16,14 @@ class Card extends React.Component {
         this.state= initialState
     }
 
-    updateStocks = (update) => {
+    updateStocks = (tick) => {
         let newStocks = {...this.state.stocks}
+        let update= {...tick}
         newStocks[update.symbol] = update
         delete newStocks[update.symbol]['symbol']
-        this.setState({stocks: newStocks}, console.log(this.state))
+        this.setState({stocks: newStocks}, 
+            // () => console.log(this.state)
+        )
     }
 
     componentDidMount(){
@@ -32,6 +35,10 @@ class Card extends React.Component {
             console.log(tick)
         });
     }
+
+    componentWillUnmount(){
+       // add code to turn off StockTicker
+    }
     
       render(){
         return (
@@ -40,8 +47,8 @@ class Card extends React.Component {
                     <UnitsOfChangePicker/>
                 </CardHeaderDiv>
               {
-                   Object.values(this.state.stocks).map((value) => (
-                      <p>{value['end']}</p>
+                   Object.entries(this.state.stocks).map(([key, value], i) => (
+                     <Ticker symbol={key} info={value}></Ticker>
                   ))
               }
             </CardDiv>

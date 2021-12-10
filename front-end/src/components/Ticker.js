@@ -1,14 +1,18 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 
-function Ticker(symbol,info) {
+class Ticker extends React.Component {
 
-  return (
-    <div>
-        <p>{symbol}</p>
-        <p>{info.end}</p>
-    </div>
-  );
+  render(){
+    return (
+      <div>
+        <p>{this.props.symbol}</p>
+          <p>{this.props.info.end}</p>
+          {/* <p>{info.end}</p> */}
+      </div>
+    );
+  }
+  
 }
 
 

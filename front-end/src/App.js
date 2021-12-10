@@ -1,17 +1,9 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 
-import setUpTicker from './utils/ticker'
 import Card from './components/Card'
 
 function App() {
-
-  useEffect(()=> {
-    setUpTicker()
-    window.StockTicker.addListener(function (tick) {
-      console.log('Stock tick:', tick);
-  });
-  },[])
 
   return (
     <ContainerDiv>

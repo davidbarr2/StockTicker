@@ -46,11 +46,13 @@ class Card extends React.Component {
                 <CardHeaderDiv>
                     <UnitsOfChangePicker/>
                 </CardHeaderDiv>
-              {
-                   Object.entries(this.state.stocks).map(([key, value], i) => (
-                     <Ticker symbol={key} info={value}></Ticker>
-                  ))
-              }
+                <TickerContainer>
+                    {
+                        Object.entries(this.state.stocks).map(([key, value], i) => (
+                            <Ticker symbol={key} info={value} {...this.state}></Ticker>
+                        ))
+                    }
+                </TickerContainer>
             </CardDiv>
           );
       }
@@ -66,7 +68,13 @@ const CardDiv = styled.div`
 const CardHeaderDiv = styled.div`
     display: flex;
     justify-content: flex-end;
-    padding: 5%;
+    
+`
+
+const TickerContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
 `
 
 export default Card;

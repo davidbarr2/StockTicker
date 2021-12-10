@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 
-import setUpTicker from '../utils/setUpTicker'
+import setUpTicker from '../utils/startTickerStream'
 import UnitsOfChangePicker from './UnitsOfChangePicker';
 import Ticker from './Ticker';
+import startTickerStream from '../utils/startTickerStream';
 
     const initialState = {
         changeUnitsIsDollar: true,
@@ -19,6 +20,7 @@ class Card extends React.Component {
     updateStocks = (tick) => {
         let newStocks = {...this.state.stocks}
         let update= {...tick}
+
         newStocks[update.symbol] = update
         delete newStocks[update.symbol]['symbol']
         this.setState({stocks: newStocks}, 
@@ -27,7 +29,7 @@ class Card extends React.Component {
     }
 
     componentDidMount(){
-        setUpTicker()
+        startTickerStream()
 
         let that = this
         window.StockTicker.addListener(function (tick) {
@@ -68,7 +70,6 @@ const CardDiv = styled.div`
 const CardHeaderDiv = styled.div`
     display: flex;
     justify-content: flex-end;
-    
 `
 
 const TickerContainer = styled.div`

@@ -8,13 +8,13 @@
 
 var _ = require('underscore');
 
-export default function setUpTicker(){
+export default function startTickerStream(){
     window.StockTicker = (function () {
 
         var stockValues = {
             'S&P 500': 1859,
             'DOW J': 16296,
-            'NASDAQ': 4296
+            'NASDAQ': 4296,
         };
         var symbols = _.keys(stockValues);
         var stockChanges = _.range(-25, 30, 5);

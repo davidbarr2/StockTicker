@@ -44,12 +44,12 @@ class Card extends React.Component {
         return (
             <CardDiv>
                 <CardHeaderDiv>
-                    <UnitsOfChangePicker/>
+                    <UnitsOfChangePicker setter={(newValue)=>this.setState({changeUnitsIsDollar: newValue})}/>
                 </CardHeaderDiv>
                 <TickerContainer>
                     {
                         Object.entries(this.state.stocks).map(([key, value], i) => (
-                            <Ticker symbol={key} info={value} {...this.state}></Ticker>
+                            <Ticker symbol={key} info={value} changeUnitsIsDollar={this.state.changeUnitsIsDollar}></Ticker>
                         ))
                     }
                 </TickerContainer>
@@ -61,7 +61,7 @@ class Card extends React.Component {
 const CardDiv = styled.div`
     border-radius: 15px;
     background: whitesmoke;
-    width: 400px;
+    width: 600px;
     margin: 2%;
 `
 
@@ -74,7 +74,6 @@ const CardHeaderDiv = styled.div`
 const TickerContainer = styled.div`
     display: flex;
     justify-content: center;
-    border: 1px solid red;
 `
 
 export default Card;

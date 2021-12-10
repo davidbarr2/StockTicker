@@ -13,7 +13,6 @@ class TickerHeader extends React.Component {
 }
 
 const TickerHeaderDiv = styled.div`
-    border: 1px solid red;
     font-size: 8px;
     margin-top: 0;
 `

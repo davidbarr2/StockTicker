@@ -1,24 +1,25 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 
-function UnitsOfChangePicker({setter}) {
+function UnitsOfChangePicker({currentValue, setter}) {
 
   function changeUnits(newValue){
     setter(newValue)
   }
 
+  const StyledSpan = styled.span(props => ({
+    fontWeight: props.bold ? '900' : 'none'
+  }))
+
   return (
-    <UnitPickerDiv>
-        <span onClick={()=>changeUnits(true)}>$</span>
+    <div>
+        <StyledSpan bold={currentValue} onClick={()=>changeUnits(true)}>$</StyledSpan>
         <span> | </span>
-        <span onClick={()=>changeUnits(false)}>%</span>
-    </UnitPickerDiv>
+        <StyledSpan bold={!currentValue} onClick={()=>changeUnits(false)}>%</StyledSpan>
+    </div>
   );
 }
 
-const UnitPickerDiv = styled.div`
-  padding: 2%;
-`
 
 
 export default UnitsOfChangePicker;

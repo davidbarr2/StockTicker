@@ -14,7 +14,8 @@ class TickerHeader extends React.Component {
 
 const TickerHeaderDiv = styled.div`
     font-size: 8px;
-    margin-top: 0;
+    
+    color: black;
 `
 
 

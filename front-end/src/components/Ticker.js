@@ -4,34 +4,48 @@ import TickerHeader from './TickerHeader'
 
 class Ticker extends React.Component {
 
+  priceFormatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0
+  })
+  
+  dollarChangeFormatter = new Intl.NumberFormat('en-us', {
+    signDisplay: 'always'
+  })
+
   percentFormatter = new Intl.NumberFormat('en-US', {
     style: 'percent',
     minimumFractionDigits: 2,
     signDisplay: 'always'
   })
 
+  TickerBox = styled.div(props => ({
+    border: "1px solid grey",
+    padding: "0 4% 4% 4%",
+    marginBottom: "2%",
+    color: props.change > 0 ? 'green' : 'red'
+  }))
+
+
   render(){
     return (
-      <TickerBox>
+      <this.TickerBox change={this.props.info.change}>
         <TickerHeader symbol={this.props.symbol}/>
-          <span>${this.props.info.end}</span>
+          <span>{this.priceFormatter.format(this.props.info.end)}</span>
           {
-            this.props.changeUnitsIsDollar && <span> ( ${this.props.info.change} )</span>
+            this.props.changeUnitsIsDollar && <span> ({this.dollarChangeFormatter.format(this.props.info.change)})</span>
           }
           {
             !this.props.changeUnitsIsDollar && <span> ({this.percentFormatter.format(this.props.info.change / this.props.info.start)})</span>
           }
-      </TickerBox>
+      </this.TickerBox>
     );
   }
   
 }
 
-const TickerBox = styled.div`
-  border: 1px solid grey;
-  padding: 0 4% 4% 4%;
-  margin-bottom: 2%;
-`
+
 
 
 export default Ticker;

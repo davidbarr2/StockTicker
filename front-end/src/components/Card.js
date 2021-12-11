@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import setUpTicker from '../utils/startTickerStream'
 import UnitsOfChangePicker from './UnitsOfChangePicker';
 import Ticker from './Ticker';
 import startTickerStream from '../utils/startTickerStream';
@@ -51,7 +50,7 @@ class Card extends React.Component {
                 <TickerContainer>
                     {
                         Object.entries(this.state.stocks).map(([key, value], i) => (
-                            <Ticker symbol={key} info={value} changeUnitsIsDollar={this.state.changeUnitsIsDollar}></Ticker>
+                            <Ticker key={i} symbol={key} info={value} changeUnitsIsDollar={this.state.changeUnitsIsDollar}></Ticker>
                         ))
                     }
                 </TickerContainer>

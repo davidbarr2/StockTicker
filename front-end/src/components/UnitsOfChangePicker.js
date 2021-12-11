@@ -7,10 +7,6 @@ function UnitsOfChangePicker({currentValue, setter}) {
     setter(newValue)
   }
 
-  const StyledSpan = styled.span(props => ({
-    fontWeight: props.bold ? '900' : 'none'
-  }))
-
   return (
     <div>
         <StyledSpan bold={currentValue} onClick={()=>changeUnits(true)}>$</StyledSpan>
@@ -20,6 +16,9 @@ function UnitsOfChangePicker({currentValue, setter}) {
   );
 }
 
+const StyledSpan = styled.span(props => ({
+  fontWeight: props.bold ? '900' : 'none'
+}))
 
 
 export default UnitsOfChangePicker;

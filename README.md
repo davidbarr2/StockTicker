@@ -55,7 +55,3 @@ Stock Ticker with change in price shown as a **percent**
 
 - Add a 'removeListener' method to window.StockTicker. Call this when app unmounts.
 - Dynamically push tickers to an additional row when the first row gets too crowded. For instance, if you have 6 tickers then they will not all fit on the first row.
-
-## Questions about the Process
-
-- What was the biggest challenge faced while developing this app?

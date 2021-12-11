@@ -1,6 +1,9 @@
 # StockTicker
 
 ## Solution
+View live solution at:
+https://npvo2.csb.app/
+
 Stock Ticker with change in price shown as a **dollar amount**
 ![Screen Shot 2021-12-11 at 11 16 38 AM](https://user-images.githubusercontent.com/48306510/145683747-0558c0f5-bb00-45cc-adce-64a69b89f254.png)
 

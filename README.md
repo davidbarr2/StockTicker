@@ -40,7 +40,7 @@ Stock Ticker with change in price shown as a **percent**
       - end: 560}
   - }
 - }
-- 'changeUnitsIsDollars' tells us what the change is stock price is expressed in dollars or percents
+- 'changeUnitsIsDollars' tells us whether the change is stock price is expressed in dollars or percents
 - This structure was chosen to have a single node for each stock symbol. This presents an easy-to-understand hierarchy of data where a key is the stock symbol and the value is information about that stock.
   - The other consideration was an array of objects where each object contains symbol, start, change, and end. However, this requires entering an object to understand what stock it represents.
 

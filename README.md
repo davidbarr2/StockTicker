@@ -1,6 +1,8 @@
 # StockTicker
 
 ## Solution
+![Screen Shot 2021-12-11 at 11 16 38 AM](https://user-images.githubusercontent.com/48306510/145683747-0558c0f5-bb00-45cc-adce-64a69b89f254.png)
+![Screen Shot 2021-12-11 at 11 17 03 AM](https://user-images.githubusercontent.com/48306510/145683751-a0a67fea-f516-4771-b1f8-760e2f9727d7.png)
 
 (insert pictures and link to solution here)
 
